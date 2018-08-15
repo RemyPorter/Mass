@@ -10,7 +10,7 @@ So that laid out our first goal: we needed audio of numbers being recited, mangl
 
 ## Building the Numbers
 
-Due to budget (not much) and time (also not much), we made the choice to automate this. We went (arguably) low-tech, and use the MacOS `say` command line command. First thing I did was a quick `xargs` command to generate sample text in *every* voice available. Nobody wanted it to sound like Siri.
+Due to budget (not much) and time (also not much), we made the choice to automate this. We went (arguably) low-tech, and used the MacOS `say` command line command. First thing I did was a quick `xargs` command to generate sample text in *every* voice available. Nobody wanted it to sound like Siri.
 
 Ayne chose Sin-Ji as the best voice. So the next step was to take the spreadsheet and feed it in. Enter Python.
 
@@ -105,7 +105,7 @@ You may notice that in `playback.py`, I write to *one* GPIO pin, and read from a
 "If it's stupid and it works, at least it worked."
 
 ## Other Audio
-To help build the world, there was some other audio in the space, provided by [drone.rb](drone.rb). This is another Sonic-Pi script, which outputs a rather unpleasant drone. One patron mentioned that being anywhere near it was physically unpleasant, which honestly, was the design goal. It's a nice Lynchian hum, like a menacing power substation. You could hear it in the entire space, and it suffused everything that was happening. I was pretty proud of it.
+To help build the world, there was some other audio in the space, provided by [drone.rb](drone.rb). This is another Sonic-Pi script, which outputs a rather ugly drone. One patron mentioned that being anywhere near it was physically unpleasant, which honestly, was the design goal. It's a nice Lynchian hum, like a menacing power substation. You could hear it in the entire space, and it suffused everything that was happening. In any other room, it just added ambiance, but in the room where the speaker was, it was purely *uncomfortable*. I was pretty proud of it.
 
 ## After Action
 The show has wrapped, which is partially why I'm doing this writeup. But it may also get a revival- which is why I'm not including too many details about the props used, or anything beyond the broadest summary of the show.
