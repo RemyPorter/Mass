@@ -1,12 +1,12 @@
 # Mass: An Invisible Conversation - Technical Notes
 
-I recently had the great privilege to contribute to [Uncumber Theatric's](http://uncumbertheatrics.com) recent underground show, *Mass: An Invisible Conversation*. Underground in both the metaphorical sense- a self-produced interactive show for no more than 5 patrons at a time- and the literal- it largely happened in a basement.
+I recently had the great privilege to contribute to [Uncumber Theatrics'](http://uncumbertheatrics.com) recent underground show, *Mass: An Invisible Conversation*. Underground in both the metaphorical sense- a self-produced interactive show for no more than 5 patrons at a time- and the literal- it largely happened in a basement.
 
 Writer/director/producer Ayne Terceira contacted me, initially about doing sound design, and the scope kinda spread out from there. One of the centerpieces of the experience was going to be a "numbers station"- a mysterious radio station which recited an endless list of numbers which constituted a secret code only certain people could understand. The patrons would be free to explore the basement where the "radio" lived, and interact with actors who would be in the space, or accessible via radio or Skype.
 
 So that laid out our first goal: we needed audio of numbers being recited, mangled to sound like it might be coming from a low-quality radio signal. To complicate matters, each sub-sequence of numbers needed to be rudely interrupted by the synth riff from Toto's "Africa", *and* there were literally thousands of numbers in the sequence.
 
-<video src="mass.mp4">
+[Video of prop in action](https://www.facebook.com/UncumberTheatrics/videos/299859820777068/)
 
 ## Building the Numbers
 
@@ -20,7 +20,7 @@ There was one problem: since Sin-Ji was a Hong Kong localization, the voice woul
 
 The resulting script, [convert.py](convert.py) doesn't offer much- I didn't bother to parameterize it or anything like that. It has a hardcoded reference to a CSV file, and pumps the data out via `say`. Note the use of `[[slnc 500]]`, which allows me to include silence within the audio. That's a little trick I learned about the `say` command which isn't particularly documented.
 
-The result ends up sounding [like this](sample.mp3). It's boring, dry, and certainly not theatrical. That's where Sonic-Pi comes into play.
+The result ends up sounding [like this](http://jetpackshark.com/sample.mp3). It's boring, dry, and certainly not theatrical. That's where Sonic-Pi comes into play.
 
 ## Designing the Radio Station
 
@@ -84,7 +84,7 @@ with_fx :krush, mix: 0.1 do
 end
 ```
 
-With some live loops to generate noise, pops and hiss, [the full script](station.rb) sounds something like [this](station.mp3). All in all, this generates an 108 minutes of audio as it recites the sequence.
+With some live loops to generate noise, pops and hiss, [the full script](station.rb) sounds something like [this](http://jetpackshark.com/station.mp3). All in all, this generates an 108 minutes of audio as it recites the sequence.
 
 ## Actual Playback
 Now, on set, the goal was to have this running in an endless loop. When the audience triggered a certain "switch", the audio needed to change to something else. Some of that audio was generated using [more Sonic-Pi](bwoop.rb), but that was mostly created using more traditional audio editing methods.
